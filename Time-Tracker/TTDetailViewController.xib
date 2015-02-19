@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TTDetailViewController">
+            <connections>
+                <outlet property="addButton" destination="hPX-PH-gz2" id="h9N-Xz-AlU"/>
+                <outlet property="checkInButton" destination="hPX-PH-gz2" id="Zyg-lc-jUV"/>
+                <outlet property="checkOutButton" destination="hPX-PH-gz2" id="f5h-vI-izl"/>
+                <outlet property="reportButton" destination="hPX-PH-gz2" id="fch-4Y-Sds"/>
+                <outlet property="tableVIew" destination="xOE-BZ-nkC" id="5LW-Gb-CXz"/>
+                <outlet property="timeLabel" destination="aBf-eb-WEj" id="Mag-TF-yuV"/>
+                <outlet property="titleTextField" destination="upe-gH-biL" id="N7D-y0-qKK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBf-eb-WEj">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="131" y="210" width="322" height="21"/>
+                    </variation>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xOE-BZ-nkC">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="80" y="259" width="424" height="439"/>
+                    </variation>
+                </tableView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hPX-PH-gz2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <items>
+                        <barButtonItem title="Add" id="xyr-Uw-jLf">
+                            <connections>
+                                <action selector="addReport:" destination="-1" id="uir-2m-S7X"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="OWD-F8-xab"/>
+                        <barButtonItem title="Check In" id="f2Y-4Z-RG4">
+                            <connections>
+                                <action selector="checkIn:" destination="-1" id="VWg-rF-oLS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="wro-gG-HMW"/>
+                        <barButtonItem title="Check Out" id="VN9-ox-1rg">
+                            <connections>
+                                <action selector="checkOut:" destination="-1" id="B6l-fR-Utp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jke-4W-cp2"/>
+                        <barButtonItem title="Report" id="nr6-mQ-dXX">
+                            <connections>
+                                <action selector="report:" destination="-1" id="Jvj-ef-xpQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="-8" y="748" width="600" height="44"/>
+                    </variation>
+                </toolbar>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="upe-gH-biL">
+                    <rect key="frame" x="87" y="118" width="430" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="80" y="151" width="430" height="30"/>
+                    </variation>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="N50-dd-zWW"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="aBf-eb-WEj"/>
+                    <exclude reference="xOE-BZ-nkC"/>
+                    <exclude reference="hPX-PH-gz2"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular">
+                <mask key="subviews">
+                    <include reference="aBf-eb-WEj"/>
+                    <include reference="xOE-BZ-nkC"/>
+                    <include reference="hPX-PH-gz2"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
