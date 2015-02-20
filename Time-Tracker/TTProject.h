@@ -18,5 +18,12 @@
 - (NSDictionary *)projectDictionary;
 - (id) initWithDictionary:(NSDictionary *)dictionary;
 
+-(void)addEntry:(TTEntry *)entry;
+-(void)RemoveEntry:(TTEntry *)entry;
+
+-(void)endCurrentEntry;
+-(void)startNewEntry;
+
+-(void)synchronize;
 
 @end

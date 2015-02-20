@@ -7,18 +7,41 @@
 //
 
 #import "TTProject.h"
+#import "TTEntry.h"
 
 @implementation TTProject
 
 
--(void) addEntry {
+-(NSDictionary *)projectDictionary {
+    
+    
+}
+
+-(id)initWithDictionary:(NSDictionary *)dictionary {
+    
+    
+}
+
+-(void) addEntry:(TTEntry *)entry {
     
 }
 
 
--(void) removeEntry {
+-(void) removeEntry:(TTEntry *)entry {
     
 }
 
+-(void) startNewEntry {
+    
+}
+
+- (void) endCurrentEntry {
+    
+}
+
+-(void) synchronize {
+    
+    
+}
 
 @end

@@ -10,6 +10,7 @@
 #import "TTListTableViewDatasource.h"
 
 @interface TTListViewController : UIViewController
+
 @property (nonatomic, strong) TTListTableViewDatasource * dataSource;
 @property (nonatomic, strong) UITableView * tableView;
 

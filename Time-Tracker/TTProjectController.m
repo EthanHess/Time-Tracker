@@ -7,22 +7,18 @@
 //
 
 #import "TTProjectController.h"
-#import "TTProject.h"
 
 static NSString *const projectListKey = @"projectList";
 
 
 @interface TTProjectController ()
 
-@property (nonatomic, strong) NSArray *projects;
-
-
 @end
 
 @implementation TTProjectController
 
-+ (TTProjectController*)sharedInstance {
-    static TTProjectController*sharedInstance = nil;
++ (TTProjectController *)sharedInstance {
+    static TTProjectController *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [TTProjectController new];

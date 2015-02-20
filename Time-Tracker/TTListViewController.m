@@ -11,7 +11,7 @@
 #import "TTProjectController.h"
 
 
-@interface TTListViewController () <UITabBarDelegate>
+@interface TTListViewController () <UITableViewDelegate>
 
 @end
 
