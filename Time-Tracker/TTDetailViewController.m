@@ -8,12 +8,16 @@
 
 #import "TTDetailViewController.h"
 #import "TTProject.h"
+#import "TTDetailTableViewDataSource.h"
+#import <MessageUI/MessageUI.h>
+#import "TTCustomEntryViewController.h"
 
 @interface TTDetailViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UITableView *tableVIew;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 
 @end
@@ -27,7 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -47,28 +52,58 @@
 
 - (IBAction)addReport:(id)sender {
     
+    TTCustomEntryViewController *customEntryViewController = [TTCustomEntryViewController new];
+    customEntryViewController.project = self.project;
+    
+    [self presentViewController:customEntryViewController animated:YES completion:nil];
+    
     
 }
 
 
 - (IBAction)checkIn:(id)sender {
     
-    
+    [self.project startNewEntry];
+    [self.tableView reloadData];
+     
 }
 
 
 - (IBAction)checkOut:(id)sender {
     
-    
+    [self.project endCurrentEntry];
+    [self.tableView reloadData]; 
 }
 
 
 - (IBAction)report:(id)sender {
     
+    MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc]init];
+    mailViewController.mailComposeDelegate = self;
+    
+    NSString *messageBody;
+    
+    for (TTEntry *entry in self.project.entries) {
+        
+        if (messageBody) {
+            messageBody = [NSString stringWithFormat:@"%@\n%@ to %@\n", messageBody, entry.startTime, entry.endTime];
+        }
+        else {
+            messageBody = [NSString stringWithFormat:@"%@\n%@ to %@\n", entry.startTime, entry.endTime];
+        }
+    
+    }
+    
+    [mailViewController setMessageBody:messageBody isHTML:NO];
+    
+    [self presentViewController:mailViewController animated:YES completion:nil];
     
 }
 
-
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [self dismissViewControllerAnimated:YES completion:nil]; 
+}
 
 
 
@@ -95,6 +130,4 @@
 }
 */
 
-- (IBAction)add:(id)sender {
-}
 @end

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TTCustomEntryViewController">
+            <connections>
+                <outlet property="endPickerDate" destination="S7j-bm-Efu" id="7n4-iH-seh"/>
+                <outlet property="startPickerDate" destination="LiY-9g-cM0" id="EVc-fb-rQC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKf-vi-SjL">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <items>
+                        <navigationItem title="Time Tracker " id="prH-6j-Wa5">
+                            <barButtonItem key="leftBarButtonItem" title="Cancel" id="Klf-cq-iHO">
+                                <connections>
+                                    <action selector="cancel:" destination="-1" id="q4z-Gq-kZt"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem key="rightBarButtonItem" title="Save" id="GYg-7x-M7C">
+                                <connections>
+                                    <action selector="save:" destination="-1" id="h4c-77-JHi"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    </variation>
+                </navigationBar>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="LiY-9g-cM0">
+                    <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                    <date key="date" timeIntervalSinceReferenceDate="446172510.83568102">
+                        <!--2015-02-21 00:48:30 +0000-->
+                    </date>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="0.0" y="341" width="294" height="162"/>
+                    </variation>
+                    <connections>
+                        <action selector="startDatePicker:" destination="-1" eventType="valueChanged" id="IrE-H6-gFh"/>
+                    </connections>
+                </datePicker>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="S7j-bm-Efu">
+                    <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                    <date key="date" timeIntervalSinceReferenceDate="446172744.29569602">
+                        <!--2015-02-21 00:52:24 +0000-->
+                    </date>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="295" y="341" width="305" height="162"/>
+                    </variation>
+                    <connections>
+                        <action selector="endDatePicker:" destination="-1" eventType="valueChanged" id="6oH-ia-gay"/>
+                    </connections>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6J-sO-dgM">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="73" y="210" width="182" height="54"/>
+                    </variation>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nI-9P-Ews">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="366" y="210" width="215" height="56"/>
+                    </variation>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="SKf-vi-SjL"/>
+                    <exclude reference="LiY-9g-cM0"/>
+                    <exclude reference="S7j-bm-Efu"/>
+                    <exclude reference="P6J-sO-dgM"/>
+                    <exclude reference="0nI-9P-Ews"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular">
+                <mask key="subviews">
+                    <include reference="SKf-vi-SjL"/>
+                    <include reference="LiY-9g-cM0"/>
+                    <include reference="S7j-bm-Efu"/>
+                    <include reference="P6J-sO-dgM"/>
+                    <include reference="0nI-9P-Ews"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="675" y="346"/>
+        </view>
+    </objects>
+</document>

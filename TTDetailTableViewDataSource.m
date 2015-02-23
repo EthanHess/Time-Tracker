@@ -10,6 +10,8 @@
 #import "TTProjectController.h"
 #import "TTDetailViewController.h"
 #import "TTProject.h"
+#import "TTEntry.h"
+
 
 @implementation TTDetailTableViewDataSource
 
@@ -32,11 +34,11 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"EntryCell"];
     }
     
-//    TTEntry *entry = [self.project entries][indexPath.row];
-//    
-//    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", entry.startTime. entry.endTime];
-//    
-//    return cell;
+    TTEntry *entry = [self.project entries][indexPath.row];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %@", entry.startTime, entry.endTime];
+    
+    return cell;
 }
 
 @end

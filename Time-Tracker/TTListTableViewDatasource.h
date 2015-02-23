@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+static NSString * const reuseIdentifier = @"cell";
+
 @interface TTListTableViewDatasource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;

@@ -22,6 +22,11 @@ static NSString *const projectListKey = @"projectList";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [TTProjectController new];
+        sharedInstance.projects = [NSArray new];
+    
+        [sharedInstance loadFromDefaults];
+      
+        [sharedInstance synchronize];
     });
     
     return sharedInstance;
@@ -30,9 +35,9 @@ static NSString *const projectListKey = @"projectList";
 
 -(void)setProjects:(NSArray *)projects {
     
-    self.projects = projects;
-    [self syncronize];
-    
+    _projects = projects;
+    [self synchronize];
+
 }
 
 -(void)addProject: (TTProject *)project {
@@ -75,7 +80,7 @@ static NSString *const projectListKey = @"projectList";
     self.projects = projects;
 }
 
--(void) syncronize {
+-(void)synchronize {
     
     NSMutableArray *projectDictionaries = [NSMutableArray new];
     

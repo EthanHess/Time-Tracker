@@ -17,13 +17,14 @@
 
     TTListViewController *ttListViewController = [TTListViewController new];
     
-    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:(ttListViewController)];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:ttListViewController];
     
     self.window.rootViewController = navController;
     
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

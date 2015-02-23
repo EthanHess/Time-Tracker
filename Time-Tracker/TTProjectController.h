@@ -13,9 +13,9 @@
 
 @property (nonatomic, strong) NSArray *projects; 
 
-+ (TTProjectController) sharedInstance;
++ (TTProjectController *) sharedInstance;
 
--(void)addPRoject:(TTProject *)project;
+-(void)addProject:(TTProject *)project;
 -(void)removeProject:(TTProject *)project;
 
 -(void)synchronize; 

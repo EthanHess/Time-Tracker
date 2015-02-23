@@ -9,6 +9,7 @@
 #import "TTListViewController.h"
 #import "TTListTableViewDatasource.h"
 #import "TTProjectController.h"
+#import "TTDetailViewController.h"
 
 
 @interface TTListViewController () <UITableViewDelegate>
@@ -17,7 +18,7 @@
 
 @implementation TTListViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -36,9 +37,10 @@
     
     
 }
-    
 
-- (void)viewDidLoad {
+
+
+-(void)viewDidLoad {
     [super viewDidLoad];
 
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
@@ -53,9 +55,20 @@
 
 }
 
-- (
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    TTProject *project = [TTProjectController sharedInstance].projects[indexPath.row];
+    TTDetailViewController *viewController = [TTDetailViewController new];
+    viewController.project = project;
+    
+    [self.navigationController pushViewController:viewController animated:YES]; 
+    
+}
 
-- (void)didReceiveMemoryWarning {
+
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

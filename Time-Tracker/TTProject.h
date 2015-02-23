@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "TTEntry.h"
 
+
 @interface TTProject : NSObject
 
-
-@property (nonatomic, strong) NSArray * entries;
-@property (nonatomic, strong) NSString * title;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSArray *entries;
 
 - (NSDictionary *)projectDictionary;
 - (id) initWithDictionary:(NSDictionary *)dictionary;
